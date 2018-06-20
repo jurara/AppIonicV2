@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Escanear
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page3" style="background-color:#32558D;">
+  <img src="{{ mifoto }}" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
+  <button id="escanear-button4" ion-button color="balanced" block style="font-weight:lighter;font-style:italic;" on-click="goToResultados()">
+    escanear
+  </button>
+  <button id="escanear-button6" ion-button color="balanced" (click)="tomarfoto()" block>
+    <ion-icon name="camera"></ion-icon>
+  </button>
+
+  <button ion-button color="secondary" (click)="obtenerfoto()" block>
+    <ion-icon name="camera"></ion-icon>  
+  </button>
+  <!--
+  <p align="center">
+    <img src="{{ mifoto }}">
+  </p>
+  -->
+</ion-content>
