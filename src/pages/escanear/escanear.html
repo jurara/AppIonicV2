@@ -14,12 +14,18 @@
     escanear
   </button>
   <button id="escanear-button6" ion-button color="balanced" (click)="tomarfoto()" block>
-    <ion-icon name="camera"></ion-icon>
+    <ion-icon name="camera"></ion-icon> tomar foto
   </button>
 
   <button ion-button color="secondary" (click)="obtenerfoto()" block>
-    <ion-icon name="camera"></ion-icon>  
+    <ion-icon name="camera"></ion-icon>  Obtener foto
   </button>
+
+  <button ion-button color="secondary" (click)="postfoto()" block>
+    <ion-icon name="send"></ion-icon>Enviar Imagenes
+  </button>
+
+
   <!--
   <p align="center">
     <img src="{{ mifoto }}">

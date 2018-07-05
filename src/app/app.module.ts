@@ -9,11 +9,12 @@ import { TabsControllerPage } from '../pages/tabs-controller/tabs-controller';
 import { AcercaDePage } from '../pages/acerca-de/acerca-de';
 import { InicioPage } from '../pages/inicio/inicio';
 
+import { HttpClientModule } from '@angular/common/http';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Camera } from '@ionic-native/camera';
-
+import { ImagePicker } from "@ionic-native/image-picker";
 @NgModule({
   declarations: [
     MyApp,
@@ -26,6 +27,7 @@ import { Camera } from '@ionic-native/camera';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -40,7 +42,7 @@ import { Camera } from '@ionic-native/camera';
   ],
   providers: [
     StatusBar,
-    SplashScreen,Camera,
+    SplashScreen,Camera,ImagePicker,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
