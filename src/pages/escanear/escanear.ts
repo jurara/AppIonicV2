@@ -61,7 +61,7 @@ export class EscanearPage {
     
     this.imagePicker.getPictures(options).then((imageData) => {
      for(var i=0;i<imageData.length;i++){
-       this.toast("image uri ",ImageData[i]);
+       this.toast("cargando imagen ",i+1);
      }
      //this.mifoto = 'data:image/jpeg;base64,' + imageData;
     }, (err) => {
