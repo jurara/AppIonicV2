@@ -41,7 +41,7 @@ export class EscanearPage {
      // imageData is either a base64 encoded string or a file URI
      // If it's base64:
      this.toast("se tomo foto","1");
-     this.mifoto = 'data:image/jpeg;base64,' + imageData;
+     this.mifoto ='data:image/jpeg;base64,'+ imageData;//
     }, (err) => {
       this.toast("error verifica la camara","1");
      // Handle error
@@ -50,6 +50,7 @@ export class EscanearPage {
 
 
   obtenerfoto(){
+    
     const options: CameraOptions = {
       quality: 100,
       destinationType: this.camera.DestinationType.DATA_URL,
@@ -63,14 +64,18 @@ export class EscanearPage {
      for(var i=0;i<imageData.length;i++){
        this.toast("cargando imagen ",i+1);
      }
-     //this.mifoto = 'data:image/jpeg;base64,' + imageData;
+     this.mifoto = 'data:image/jpeg;base64,' + imageData;
     }, (err) => {
      this.toast("eroor:","no se pudo obtener img");
     });
   }
 
+
+
+
+
   postfoto(){
-    var url='https://a7662085.ngrok.io/analizarMuestra'
+    var url='https://f5656633.ngrok.io/analizarMuestra'
     let postData=new FormData();
     postData.append('hojas',this.mifoto);
     this.data=this.http.post(url,postData);
@@ -78,16 +83,14 @@ export class EscanearPage {
       console.log(data)
       this.toast(data, "se mando");
     });
+    this.toast("->",this.mifoto);
   }
+
  toast(msg,t){
 let toas=this.mytoast.create({
-
-
 duration:3000,
-message:msg+"\n"+t,
-
+message:msg+" "+t,
 position:"Button"
-
 })
 toas.present();
 }
