@@ -15,6 +15,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Camera } from '@ionic-native/camera';
 import { ImagePicker } from "@ionic-native/image-picker";
+import    {  LottieAnimationViewModule }    from 'ng-lottie' ; 
 @NgModule({
   declarations: [
     MyApp,
@@ -27,7 +28,7 @@ import { ImagePicker } from "@ionic-native/image-picker";
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
+    HttpClientModule, LottieAnimationViewModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],

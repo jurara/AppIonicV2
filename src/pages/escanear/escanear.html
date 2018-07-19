@@ -14,7 +14,11 @@
     escanear
   </button>
   <button id="escanear-button6" ion-button color="balanced" (click)="tomarfoto()" block>
-    <ion-icon name="camera"></ion-icon> tomar foto
+    tomar foto
+    
+    <lottie-animation-view [options]="lottieConfig" [width]="100" [height]="100">
+
+    </lottie-animation-view>
   </button>
 
   <button ion-button color="secondary" (click)="obtenerfoto()" block>
@@ -24,7 +28,14 @@
   <button ion-button color="secondary" (click)="postfoto()" block>
     <ion-icon name="send"></ion-icon>Enviar Imagenes
   </button>
+<div >
+<span #Myref>
+  <lottie-animation-view id="imagen" [options]="lottieConfig2" [width]="200" [height]="200">
 
+  </lottie-animation-view>
+</span>
+
+</div>
 
   <!--
   <p align="center">

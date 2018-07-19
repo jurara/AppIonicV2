@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { Observable } from 'rxjs/Observable';
 import { ImagePicker } from "@ionic-native/image-picker";
+import    {  LottieAnimationViewModule }    from 'ng-lottie' ; 
 @Component({
   selector: 'page-escanear',
   templateUrl: 'escanear.html'
@@ -15,9 +16,25 @@ export class EscanearPage {
   mifoto:any;
   result:any=[];
   data:Observable<any>;
+  lottieConfig:any;
+  lottieConfig2:any;
   constructor(public navCtrl: NavController,private camera:Camera, public http:HttpClient,public mytoast:ToastController
     ,public imagePicker:ImagePicker) {//
+      LottieAnimationViewModule.forRoot();
+      this.lottieConfig = {
+        path: 'assets/foto_icon_.json',
+        path2:'assets/file_error.json',
+        autoplay: true,
+        loop: true
+      }
+      this.lottieConfig2= {
+        
+        path:'assets/file_error.json',
+        autoplay: true,
+        loop: true
+      }
   }
+  
   goToResultados(params){
     if (!params) params = {};
     this.navCtrl.push(ResultadosPage);
@@ -43,7 +60,7 @@ export class EscanearPage {
      this.toast("se tomo foto","1");
      this.mifoto ='data:image/jpeg;base64,'+ imageData;//
     }, (err) => {
-      this.toast("error verifica la camara","1");
+    
      // Handle error
     });
   }
@@ -66,7 +83,8 @@ export class EscanearPage {
      }
      this.mifoto = 'data:image/jpeg;base64,' + imageData;
     }, (err) => {
-     this.toast("eroor:","no se pudo obtener img");
+    
+
     });
   }
 
