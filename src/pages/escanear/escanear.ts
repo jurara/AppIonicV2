@@ -18,6 +18,8 @@ export class EscanearPage {
   data:Observable<any>;
   lottieConfig:any;
   lottieConfig2:any;
+  lottieConfig3:any;
+  lottieConfig4:any;
   constructor(public navCtrl: NavController,private camera:Camera, public http:HttpClient,public mytoast:ToastController
     ,public imagePicker:ImagePicker) {//
       LottieAnimationViewModule.forRoot();
@@ -33,7 +35,23 @@ export class EscanearPage {
         autoplay: true,
         loop: true
       }
-  }
+      this.lottieConfig3= {
+      
+        path:'assets/cloud_upload.json',
+        autoplay: true,
+        loop: true
+      }//imagen de enviarioni
+
+      this.lottieConfig4= {
+      
+        path:'assets/layers.json',
+        autoplay: true,
+        loop: true
+      }//json de obtener foto
+    }//termina el constructor
+  
+
+  
   
   goToResultados(params){
     if (!params) params = {};
